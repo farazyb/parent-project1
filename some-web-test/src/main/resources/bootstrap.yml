@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: some-web-test
+  profiles:
+    active: prod
+  cloud:
+    config:
+      uri: http://localhost:8088/
+  devtools:
+    livereload:
+      enabled: true
+
+eureka:
+  instance:
+    hostname: localhost
+    non-secure-port: 8085
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.non-secure-port}/eureka
+
+server:
+  port: 9091
+
+debug: false

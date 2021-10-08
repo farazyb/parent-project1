@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: config-server
+
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:config
+          version: 1
+
+eureka:
+  instance:
+    hostname: localhost
+    non-secure-port: 8085
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.non-secure-port}/eureka
+server:
+  port: 8088
+

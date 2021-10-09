@@ -1,5 +1,7 @@
 my:
-  prop: salam az dev
+  prop: salam az dev some web test
 
 
 
+server:
+  port: 9092

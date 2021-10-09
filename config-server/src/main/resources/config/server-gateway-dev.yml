@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: employeeModule
+          uri: http://localhost:9092/
+          predicates:
+            - Path=/employee/**
+        - id: consumerModule
+          uri: http://localhost:9094/
+          predicates:
+            - Path=/consumer/**
+eureka:
+  instance:
+    hostname: localhost
+    non-secure-port: 8085
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.non-secure-port}/eureka
+
+server:
+  port: 9099

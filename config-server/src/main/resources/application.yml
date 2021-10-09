@@ -8,8 +8,14 @@ spring:
     config:
       server:
         native:
-          search-locations: classpath:config
-          version: 1
+          search-locations: file://C:\Users\f.yazdani\CentralRepo
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, bus-refresh, beans, env, info
+
+
 
 eureka:
   instance:

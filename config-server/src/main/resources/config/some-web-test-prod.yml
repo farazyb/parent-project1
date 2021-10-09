@@ -1,2 +1,5 @@
 my:
   prop: salam az prod
+
+server:
+  port: 9093

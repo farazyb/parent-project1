@@ -1,8 +1,7 @@
-package com.fyb.somewebtest;
+package com.fyb.web2;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -13,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableDiscoveryClient
 @RestController
-@RequestMapping("/employee")
-public class SomeWebTestApplication {
+@RequestMapping("/consumer")
+@RefreshScope
+public class Web2Application {
+
 
     @Value("${my.prop}")
     private String myProp;
@@ -25,7 +26,7 @@ public class SomeWebTestApplication {
         return "Prop value: " + myProp;
     }
     public static void main(String[] args) {
-        SpringApplication.run(SomeWebTestApplication.class, args);
+        SpringApplication.run(Web2Application.class, args);
     }
 
 }
